@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "./axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import "./App.css";
+import Reel from "./Reel";
 
 function App() {
+  const [reels, setReels] = useState([]);
+  useEffect(() => {
+    async function fetchPosts() {
+      const response = await axios.get("/v2/posts");
+      setReels(response.data);
+
+      return response;
+    }
+
+    fetchPosts();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //BEM NAMING CONVENTION
+    <div className="app">
+      <div className="app_reels">
+        {reels.map(
+          ({ url, channel, description, song, likes, comments, shares }) => (
+            <Reel
+              url={url}
+              channel={channel}
+              song={song}
+              likes={likes}
+              comments={comments}
+              shares={shares}
+            />
+          )
+        )}
+      </div>
     </div>
   );
 }
