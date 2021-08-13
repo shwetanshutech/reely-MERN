@@ -1,0 +1,25 @@
+.reelSidebar {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  color: white;
+}
+.reelSidebar_button {
+  padding: 20px;
+  text-align: center;
+}
+.font_sizeSideBar {
+  font-size: large;
+}
+
+@media only screen and (max-width: 768px) {
+  .reelSidebar {
+    position: absolute;
+    top: 20%;
+    right: 5px;
+    color: white;
+  }
+  .font_sizeSideBar {
+    font-size: smaller;
+  }
+}

@@ -1,0 +1,41 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+.app {
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
+
+.app_reels {
+  position: relative;
+  height: 600px;
+  border-radius: 20px;
+  overflow: scroll;
+  width: 30%;
+  max-width: 500px;
+  scroll-snap-type: y mandatory;
+}
+
+/* Hide the scrollbar for Chrome ,safari and opera */
+.app_reels::-webkit-scrollbar {
+  display: none;
+}
+
+.app_reels {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /*Firefox */
+}
+
+@media only screen and (max-width: 768px) {
+  .app_reels {
+    position: relative;
+    height: 70%;
+    border-radius: 20px;
+    overflow: scroll;
+    width: 70%;
+    max-width: 90%;
+    scroll-snap-type: y mandatory;
+  }
+}
