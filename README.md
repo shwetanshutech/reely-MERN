@@ -2,6 +2,8 @@
 
 Reel is a _video-sharing social networking app_ which fetched data from **MongoDB**. App uses **NodeJS** as backend and **React** JS as frontend .It was completely build using MERN.
 
+Go to reely>src>axios>baseURL>Change it to "http://localhost:9000/"
+
 ## TECH USED
 
 <table style="width:100% ; border:1px solid black;">
